@@ -6,14 +6,15 @@ import '../Shared/functions.dart';
 
 class Formats{
 
-  static const table = 'Formats';
+  static const table = 'Format_Master';
 
   static const id = "formatId";
   static const name = "formatName";
   static const noOfPossibleLines = "NoOfPossibleLines";
-  static const listOfBlock = "ListOfBlock";
   static const startingText = "startingText";
   static const startingTextPredecessor = "startingTextPredecessor";
+  static const verticalNavigationLines = "VerticalNavigLines"; //Top, Down
+  static const horizontalNavigationCharacters = "HorizonNavigChars"; //Left, Right
 
 
   Formats._privateConstructor();
@@ -39,9 +40,10 @@ class Formats{
 $id nvarchar,
 $name nvarchar,
 $noOfPossibleLines int,
-$listOfBlock nvarchar,
 $startingText nvarchar,
-$startingTextPredecessor nvarchar
+$startingTextPredecessor nvarchar,
+$verticalNavigationLines int,
+$horizontalNavigationCharacters int
   )    
           ''');
   }

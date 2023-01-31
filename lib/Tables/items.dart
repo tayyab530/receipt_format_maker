@@ -8,10 +8,9 @@ class Items{
 
   static const id = "ItemId";
   static const formatId = "formatId";
-  static const lineType = "lineType"; // Starting point - 1, Items - 2, and so on...
   static const startingText = "StartingText";
-  static const verticalLinesDownwards = "VerticalLinesDownwards";
-  static const horizontalCharacterRight = "HorizontalCharacterRight";
+  static const verticalNavigationLines = "VerticalNavigLines"; //Top, Down
+  static const horizontalNavigationCharacters = "HorizonNavigChars"; //Left, Right
   static const possibleLines = "possibleLines";
 
 
@@ -37,11 +36,11 @@ class Items{
           CREATE TABLE  $table(
 $id nvarchar,
 $formatId nvarchar,
-$lineType int,
 $startingText nvarchar,
-$verticalLinesDownwards int,
-$horizontalCharacterRight int,
-$possibleLines int  )    
+$verticalNavigationLines int,
+$horizontalNavigationCharacters int,
+$possibleLines int
+)    
           ''');
   }
 

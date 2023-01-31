@@ -3,20 +3,23 @@
 import 'package:sqflite/sqflite.dart';
 
 import '../Shared/functions.dart';
-class Lines{
+class RowSequence{
 
-  static const table = 'Lines';
-
-  static const id = "LineId";
-  static const itemId = "ItemId";
-  static const lineType = "lineType"; // 0 = primary, 1 = secondary
-  static const verticalLinesDownwards = "VerticalLinesDownwards";
-  static const horizontalCharacterRight = "HorizontalCharacterRight";
+  static const table = 'RowSequence';
 
 
-  Lines._privateConstructor();
-  static final Lines instance =
-  Lines._privateConstructor();
+  static const id = "RowSequenceId";
+  static const seq = "Sequence"; //TODO: add it to table
+  static const subSeq = "SubSequence"; // 0 = primary, 1 = secondary
+  static const rowType = "RowType"; // hst,total ,subtotal ,item
+  static const verticalNavigationLines = "VerticalNavigLines"; //Top, Down
+  static const horizontalNavigationCharacters = "HorizonNavigChars"; //Left, Right
+
+
+
+  RowSequence._privateConstructor();
+  static final RowSequence instance =
+  RowSequence._privateConstructor();
 
   // only have a single app-wide reference to the database
   static Database? _database;
@@ -35,10 +38,11 @@ class Lines{
     await db.execute('''
           CREATE TABLE  $table(
 $id nvarchar,
-$itemId nvarchar,
-$lineType int,
-$verticalLinesDownwards int,
-$horizontalCharacterRight int
+$seq int,
+$subSeq int,
+$rowType nvarchar,
+$verticalNavigationLines int,
+$horizontalNavigationCharacters int
   )    
           ''');
   }

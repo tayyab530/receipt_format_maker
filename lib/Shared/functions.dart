@@ -17,20 +17,20 @@ String path = "";
 Future onCreate(Database db, int version) async {
   await Formats.instance.onCreate(db, version);
   await Items.instance.onCreate(db, version);
-  await Lines.instance.onCreate(db, version);
+  await RowSequence.instance.onCreate(db, version);
   await Blocks.instance.onCreate(db, version);
   await Tax.instance.onCreate(db, version);
-  await SubTotal.instance.onCreate(db, version);
+  await SubTotals.instance.onCreate(db, version);
   await Total.instance.onCreate(db, version);
 }
 
-deleteAllTables() async{
+deleteAllDataFromTables() async{
   await Formats.instance.deleteall();
   await Items.instance.deleteall();
-  await Lines.instance.deleteall();
+  await RowSequence.instance.deleteall();
   await Blocks.instance.deleteall();
   await Tax.instance.deleteall();
-  await SubTotal.instance.deleteall();
+  await SubTotals.instance.deleteall();
   await Total.instance.deleteall();
 }
 

@@ -6,9 +6,12 @@ class Blocks{
 
   static const table = 'Blocks';
 
-  static const id = "BlockId";
-  static const lineId = "LineId";
-  static const dataType = "DataType"; // 0 = Numeric, 1 = AlphabetOnly, 2 = Alpha-Numeric, 3 = Currency, 4 = Percentage
+  static const formatId = "formatId";
+  static const formatName = "formatName";
+  static const rowSequenceID = "RowSequenceID";
+  static const blockId = "BlockId";
+  static const dataType = "DataType"; // 1 = Numeric, 2 = AlphabetOnly, 3 = Alpha-Numeric, 4 = Currency, 5 = Percentage
+  static const dataTypeName = "DataTypeName";
   static const maxLength = "MaxLength";
   static const isRequired = "IsRequired"; // 0 = no, 1 = yes
   static const key = "Key";
@@ -33,9 +36,12 @@ class Blocks{
   Future onCreate(Database db, int version) async {
     await db.execute('''
           CREATE TABLE  $table(
-$id nvarchar,
-$lineId nvarchar,
+$formatId nvarchar,
+$formatName nvarchar,
+$rowSequenceID nvarchar,
+$blockId nvarchar,
 $dataType int,
+$dataTypeName nvarchar,
 $maxLength int,
 $isRequired int,
 $key nvarchar

@@ -3,20 +3,20 @@
 import 'package:sqflite/sqflite.dart';
 
 import '../Shared/functions.dart';
-class SubTotal{
+class SubTotals{
 
   static const table = 'SubTotal';
 
   static const id = "Id";
   static const formatId = "formatId";
-  static const listOfLineIds = "ListOfLineIds";
+  static const listOfRowSequenceIds = "ListOfRowSequenceIds";
   static const startingText = "StartingText";
   static const possibleLines = "possibleLines";
   static const verticalLinesUpwards = "VerticalLinesUpwards";
 
-  SubTotal._privateConstructor();
-  static final SubTotal instance =
-  SubTotal._privateConstructor();
+  SubTotals._privateConstructor();
+  static final SubTotals instance =
+  SubTotals._privateConstructor();
 
   // only have a single app-wide reference to the database
   static Database? _database;
@@ -37,7 +37,7 @@ class SubTotal{
 $id nvarchar,
 $formatId nvarchar,
 $startingText nvarchar,
-$listOfLineIds nvarchar,
+$listOfRowSequenceIds nvarchar,
 $possibleLines int,
 $verticalLinesUpwards int
   )    
