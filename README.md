@@ -1,16 +1,1 @@
-# receipt_format_maker
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<div class="markdown prose w-full break-words dark:prose-invert light"><h1>🧾 Receipt Format Maker 🧾</h1><p>A tool to automatically format your receipts and extract valuable data! 💰</p><p>Tired of manually formatting your receipts? 💤 Say goodbye to manual work and hello to automation with Receipt Format Maker! 💻</p><p>With Receipt Format Maker, you can:</p><ul><li>🎨 Create custom format rules for various receipt types</li><li>🔎 Extract valuable information from your receipts automatically</li><li>💼 Save time and streamline your work process</li></ul><p>To get started, simply upload your receipts and let Receipt Format Maker do the rest! 🚀</p><p>Say goodbye to manual receipt formatting and hello to the future with Receipt Format Maker! 🚀</p><p><img src="" alt=""></p></div>
