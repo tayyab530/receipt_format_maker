@@ -14,6 +14,7 @@ class RowSequence{
   static const rowType = "RowType"; // hst,total ,subtotal ,item
   static const verticalNavigationLines = "VerticalNavigLines"; //Top, Down
   static const horizontalNavigationCharacters = "HorizonNavigChars"; //Left, Right
+  static const startingText = "StartingText";
 
 
 
@@ -42,7 +43,8 @@ $seq int,
 $subSeq int,
 $rowType nvarchar,
 $verticalNavigationLines int,
-$horizontalNavigationCharacters int
+$horizontalNavigationCharacters int,
+$startingText nvarchar
   )    
           ''');
   }

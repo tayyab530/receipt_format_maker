@@ -3,18 +3,29 @@
 import 'package:sqflite/sqflite.dart';
 
 import '../Shared/functions.dart';
+class Elements{
 
-class Formats{
+  static const table = 'Elements';
 
-  static const table = 'Format_Master';
+  static const formatId = "FormatId";
+  static const elementId = "ElementId";
+  static const text = "ElementText";
+  static const topLeftCoordinate = "TopLeftCoordinate";
+  static const topLeftX = "TopLeftX";
+  static const topLeftY = "TopLeftY";
+  static const topRightCoordinate = "TopRightCoordinate";
+  static const topRightX = "TopRightX";
+  static const topRightY = "TopRightY";
+  static const bottomRightCoordinate = "BottomRightCoordinate";
+  static const bottomRightX = "BottomRightX";
+  static const bottomRightY = "BottomRightY";
+  static const bottomLeftCoordinate = "BottomLeftCoordinate";
+  static const bottomLeftX = "BottomLeftX";
+  static const bottomLeftY = "BottomLeftY";
 
-  static const id = "formatId";
-  static const name = "formatName";
-  static const noOfPossibleLines = "NoOfPossibleLines";
-
-  Formats._privateConstructor();
-  static final Formats instance =
-  Formats._privateConstructor();
+  Elements._privateConstructor();
+  static final Elements instance =
+  Elements._privateConstructor();
 
   // only have a single app-wide reference to the database
   static Database? _database;
@@ -32,10 +43,23 @@ class Formats{
   Future onCreate(Database db, int version) async {
     await db.execute('''
           CREATE TABLE  $table(
-$id nvarchar,
-$name nvarchar,
-$noOfPossibleLines int
-  )    
+$formatId nvarchar,
+$elementId nvarchar,
+$text nvarchar,
+$topLeftCoordinate nvarchar,
+$topLeftX REAL,
+$topLeftY REAL,
+$topRightCoordinate nvarchar,
+$topRightX REAL,
+$topRightY REAL,
+$bottomRightCoordinate nvarchar,
+$bottomRightX REAL,
+$bottomRightY REAL,
+$bottomLeftCoordinate nvarchar,
+$bottomLeftX REAL,
+$bottomLeftY REAL
+
+  )
           ''');
   }
 
@@ -64,7 +88,7 @@ $noOfPossibleLines int
     Database db = await instance.database;
 
     var res =
-    await db.rawQuery("SELECT * FROM $table WHERE $column = '$data' ");
+    await db.rawQuery("SELECT * FROM $table WHERE $column like '$data' ");
 
     return res;
   }

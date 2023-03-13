@@ -1,9 +1,10 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:receipt_format_maker/screens/home.dart';
+import 'package:receipt_format_maker/services/image_picker_service.dart';
+import 'package:receipt_format_maker/services/ocr_service.dart';
 
-void main(){
+void main() {
   runApp(const App());
 }
 
@@ -12,8 +13,18 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomeScreen(),
+    return MaterialApp(
+      home: MultiProvider(
+        providers: [
+          ListenableProvider(
+            create: (context) => PrvOcrService(),
+          ),
+          ListenableProvider(
+            create: (context) => ImagePickerService(),
+          ),
+        ],
+        child: const HomeScreen(),
+      ),
     );
   }
 }

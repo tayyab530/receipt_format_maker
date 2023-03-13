@@ -9,6 +9,7 @@ class Blocks{
   static const formatId = "formatId";
   static const formatName = "formatName";
   static const rowSequenceID = "RowSequenceID";
+  static const blockSequence = "BlockSequence";
   static const blockId = "BlockId";
   static const dataType = "DataType"; // 1 = Numeric, 2 = AlphabetOnly, 3 = Alpha-Numeric, 4 = Currency, 5 = Percentage
   static const dataTypeName = "DataTypeName";
@@ -39,6 +40,7 @@ class Blocks{
 $formatId nvarchar,
 $formatName nvarchar,
 $rowSequenceID nvarchar,
+$blockSequence int,
 $blockId nvarchar,
 $dataType int,
 $dataTypeName nvarchar,
@@ -74,7 +76,7 @@ $key nvarchar
     Database db = await instance.database;
 
     var res =
-    await db.rawQuery("SELECT * FROM $table WHERE $column like '$data' ");
+    await db.rawQuery("SELECT * FROM $table WHERE $column = '$data'");
 
     return res;
   }
